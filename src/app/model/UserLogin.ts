@@ -1,6 +1,6 @@
 export class UserLogin{
 
-    public idUsuario: number
+    public idUsuarioL: number
     public nome: string
     public email: string
     public senha: string
