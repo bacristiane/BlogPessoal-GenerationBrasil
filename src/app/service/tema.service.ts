@@ -20,8 +20,24 @@ export class TemaService {
 return this.http.get<Tema[]>('https://blogbraba.herokuapp.com/tema/listarTema',this.token)
     }
 
+    getByIdTema(idTema: number): Observable<Tema>{
+      return this.http.get<Tema>(`https://blogbraba.herokuapp.com/tema/${idTema}`, this.token)
+
+    }
+
     postTema(tema: Tema): Observable<Tema>{
       return this.http.post<Tema>('https://blogbraba.herokuapp.com/tema/novoTema',tema, this.token)
 
     }
+
+    putTema(tema:Tema):Observable<Tema>{
+      return this.http.put<Tema>('https://blogbraba.herokuapp.com/tema/atualizar',tema, this.token)
+    }
+
+    deleteTema (idTema: number) {
+      return this.http.delete(`https://blogbraba.herokuapp.com/tema/deletar/${idTema}`, this.token)
+
+    }
+
+
 }
